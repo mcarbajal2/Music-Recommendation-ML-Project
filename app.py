@@ -1,11 +1,12 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import os
+#os.environ['OMP_NUM_THREADS'] = '1'
 import requests
 import spotipy
 import lyricsgenius
 import faiss
-import os
 import streamlit.components.v1 as components
 from dotenv import load_dotenv
 from bs4 import BeautifulSoup
@@ -13,7 +14,7 @@ from spotipy.oauth2 import SpotifyClientCredentials
 from sentence_transformers import SentenceTransformer
 
 #Page Setup
-st.set_page_config(page_title="Music Recommendation ML Project", layout="wide")
+st.set_page_config(page_title="Music Recommendation ML P›roject", layout="wide")
 
 #Environment & API Clients
 load_dotenv()
@@ -174,7 +175,7 @@ if generate_btn:
                     col1, col2 = st.columns([1, 4])
                     with col1:
                         if art_url:
-                            st.image(art_url, use_column_width=True)
+                            st.image(art_url, width=300)
                         else:
                             st.write("💿 No Art Available")
                     with col2:
